@@ -31,7 +31,7 @@ const SideNav = () => {
       fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=${process.env.REACT_APP_API_KEY}`, GET)
         .then(response => response.json())
         .then(token => {
-          window.location.replace(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=http://localhost:3000/home/`);
+          window.location.replace(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://nazeruby-doramas.vercel.app/`);
           dispatch({ type: 'isFetchingToken', payload: false });
         })
         .catch(err => console.error(err));
